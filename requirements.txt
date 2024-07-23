@@ -1,0 +1,9 @@
+﻿streamlit
+google-generativeai
+streamlit_lottie
+st_social_media_links
+cvzone
+streamlit_webrtc
+opencv-python-headless==4.8.1.78
+numpy
+mediapipe
