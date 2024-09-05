@@ -103,7 +103,7 @@ with user_window:
                 video_processor_factory= VideoTransformer,
                 sendback_audio= False,
                 rtc_configuration={
-                    "iceServers": [{"urls": ["stun:stun.l.google.com:19302"]}]
+                    "iceServers": [{"urls": ["stun:global.stun.twilio.com:3478"]}]
                 }
             )
 
