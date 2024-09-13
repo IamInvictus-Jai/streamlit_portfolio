@@ -6,6 +6,7 @@ from cv2 import flip, rectangle, putText, FONT_HERSHEY_COMPLEX, FILLED
 from cvzone.HandTrackingModule import HandDetector
 from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
 from base64 import b64encode as encode
+from utils import turnServer
 
 
 st.set_page_config(page_title= "Rock Paper Scissor",
@@ -102,9 +103,13 @@ with user_window:
                 key="webcam",
                 video_processor_factory= VideoTransformer,
                 sendback_audio= False,
-                rtc_configuration={
-                    "iceServers": [{"urls": ["stun:global.stun.twilio.com:3478"]}]
-                }
+                #rtc_configuration={
+                #    "iceServers": [{"urls": ["stun:global.stun.twilio.com:3478"]}]
+                #}
+                mode=WebRtcMode.SENDRECV,
+                rtc_configuration= turnServer.get_server(),
+                media_stream_constraints= {"video": True, "audio": False},
+                async_processing=True
             )
 
 if ctx.video_transformer:
