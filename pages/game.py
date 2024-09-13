@@ -4,7 +4,7 @@ from av import VideoFrame
 from random import choice
 from cv2 import flip, rectangle, putText, FONT_HERSHEY_COMPLEX, FILLED
 from cvzone.HandTrackingModule import HandDetector
-from streamlit_webrtc import VideoTransformerBase, webrtc_streamer
+from streamlit_webrtc import VideoTransformerBase, webrtc_streamer, WebRtcMode, RTCConfiguration
 from base64 import b64encode as encode
 from utils import turnServer
 
